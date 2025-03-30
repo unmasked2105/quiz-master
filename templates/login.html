@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Login</h1>
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <div class="mb-3">
+            {{ form.email.label(class="form-label") }}
+            {{ form.email(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            {{ form.password.label(class="form-label") }}
+            {{ form.password(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            {{ form.role.label(class="form-label") }}
+            {{ form.role(class="form-select") }}
+        </div>
+        <div class="mb-3">
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+    </form>
+    <small class="text-muted">
+        Don't have an account? <a href="{{ url_for('register') }}">Register</a>
+    </small>
+</div>
+{% endblock content %}

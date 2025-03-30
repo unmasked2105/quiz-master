@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Manage Quizzes</h1>
+    <div class="content-section">
+        <ul class="list-group">
+            {% for quiz in quizzes %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{ quiz.title }}
+                <div>
+                    <a href="{{ url_for('edit_quiz', quiz_id=quiz.id) }}" class="btn btn-secondary btn-sm">Edit</a>
+                    <a href="{{ url_for('delete_quiz', quiz_id=quiz.id) }}" class="btn btn-danger btn-sm">Delete</a>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Add New Question</h1>
+    <div class="content-section">
+        <form method="POST" action="{{ url_for('create_question') }}">
+            {{ form.hidden_tag() }}
+            <div class="mb-3">
+                {{ form.quiz.label(class="form-label") }}
+                {{ form.quiz(class="form-control") }}
+            </div>
+            <div class="mb-3">
+                {{ form.question_text.label(class="form-label") }}
+                {{ form.question_text(class="form-control") }}
+            </div>
+            <button type="submit" class="btn btn-primary">Add Question</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}

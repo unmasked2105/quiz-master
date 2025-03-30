@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Create New Subject</h1>
+    <div class="content-section">
+        <form method="POST" action="{{ url_for('create_subject') }}">
+            {{ form.hidden_tag() }}
+            <div class="mb-3">
+                {{ form.name.label(class="form-label") }}
+                {{ form.name(class="form-control") }}
+            </div>
+            <button type="submit" class="btn btn-primary">Create Subject</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}
